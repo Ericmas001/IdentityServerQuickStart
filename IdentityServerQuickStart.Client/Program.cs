@@ -11,7 +11,6 @@ namespace IdentityServerQuickStart.Client
         public static void Main(string[] args)
         {
             MainAsync().GetAwaiter().GetResult();
-            Console.WriteLine("=========================================");
             Console.WriteLine("It's the end !! Press ENTER to EXIT");
             Console.ReadLine();
         }
@@ -25,18 +24,45 @@ namespace IdentityServerQuickStart.Client
                 return;
             }
             Console.WriteLine("Discovery OK");
+            Console.WriteLine("=========================================");
 
+            if (!await TestClientToken(disco)) return;
+
+            Console.WriteLine("=========================================");
+
+            if (!await TestUserPasswordToken(disco)) return;
+
+            Console.WriteLine("=========================================");
+        }
+
+        private static async Task<bool> TestClientToken(DiscoveryResponse disco)
+        {
             // request token
             var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api2");
+            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
 
+            return await TryCall(tokenResponse);
+        }
+
+        private static async Task<bool> TestUserPasswordToken(DiscoveryResponse disco)
+        {
+            // request token
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
+
+            return await TryCall(tokenResponse);
+        }
+
+        private static async Task<bool> TryCall(TokenResponse tokenResponse)
+        {
             if (tokenResponse.IsError)
             {
                 Console.WriteLine(tokenResponse.Error);
-                return;
+                return false;
             }
 
             Console.WriteLine(tokenResponse.Json);
+            Console.WriteLine("------------------------------------------------");
 
             // call api
             var client = new HttpClient();
@@ -52,6 +78,8 @@ namespace IdentityServerQuickStart.Client
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(JArray.Parse(content));
             }
+
+            return true;
         }
     }
 }

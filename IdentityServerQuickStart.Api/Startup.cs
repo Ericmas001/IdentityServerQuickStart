@@ -27,7 +27,7 @@ namespace IdentityServerQuickStart.Api
                     options.Authority = "http://localhost:5000";
                     options.RequireHttpsMetadata = false;
 
-                    options.ApiName = "api2";
+                    options.ApiName = "api1";
                 });
         }
 

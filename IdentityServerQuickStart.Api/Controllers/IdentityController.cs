@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityServerQuickStart.Api.Controllers
 {
-    [Route("identity")]
+    [Route("[controller]")]
     [Authorize]
     public class IdentityController : ControllerBase
     {

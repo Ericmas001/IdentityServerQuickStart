@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore;
+﻿using System;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace IdentityServerQuickStart.Api
@@ -7,6 +8,7 @@ namespace IdentityServerQuickStart.Api
     {
         public static void Main(string[] args)
         {
+            Console.Title = "API";
             BuildWebHost(args).Run();
         }
 
