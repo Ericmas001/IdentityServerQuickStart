@@ -9,7 +9,8 @@ namespace IdentityServerQuickStart.IdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("api1", "My API 1"),
+                new ApiResource("api2", "My API 2")
             };
         }
         public static IEnumerable<Client> GetClients()
@@ -30,7 +31,7 @@ namespace IdentityServerQuickStart.IdentityServer
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "api1", "api2" }
                 }
             };
         }
