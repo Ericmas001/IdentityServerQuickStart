@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerQuickStart.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerQuickStart.Client", "IdentityServerQuickStart.Client\IdentityServerQuickStart.Client.csproj", "{CE74ECB0-44D4-491A-9C92-2BEA5E0B35EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerQuickStart.WebClient", "IdentityServerQuickStart.WebClient\IdentityServerQuickStart.WebClient.csproj", "{D2DEC164-3F2F-4B7D-BF8A-277321DF3E9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CE74ECB0-44D4-491A-9C92-2BEA5E0B35EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE74ECB0-44D4-491A-9C92-2BEA5E0B35EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE74ECB0-44D4-491A-9C92-2BEA5E0B35EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2DEC164-3F2F-4B7D-BF8A-277321DF3E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2DEC164-3F2F-4B7D-BF8A-277321DF3E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2DEC164-3F2F-4B7D-BF8A-277321DF3E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2DEC164-3F2F-4B7D-BF8A-277321DF3E9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
