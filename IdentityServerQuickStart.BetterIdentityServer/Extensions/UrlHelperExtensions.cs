@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using IdentityServerQuickStart.BetterIdentityServer.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Microsoft.AspNetCore.Mvc
+namespace IdentityServerQuickStart.BetterIdentityServer.Extensions
 {
     public static class UrlHelperExtensions
     {

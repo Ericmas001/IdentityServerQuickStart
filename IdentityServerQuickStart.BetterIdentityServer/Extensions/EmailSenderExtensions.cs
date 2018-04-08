@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using IdentityServerQuickStart.BetterIdentityServer.Services;
 
-namespace IdentityServerQuickStart.BetterIdentityServer.Services
+namespace IdentityServerQuickStart.BetterIdentityServer.Extensions
 {
     public static class EmailSenderExtensions
     {
